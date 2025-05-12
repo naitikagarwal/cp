@@ -1,5 +1,7 @@
 #include <bits/stdc++.h>
-#define for0(i, n) for (int i = 0; i < (int)(n); ++i)
+
+#define rep(i , a , b) for(int i = (a) ; i <= (b) ; i++)
+#define per(i , a , b) for(int i = (a) ; i >= (b) ; i--)
 
 #define pb push_back
 using namespace std;

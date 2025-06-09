@@ -1,0 +1,14 @@
+# Ignore all .cph folders in any directory
+**/.cph/
+
+# Ignore all .vscode folders in any directory
+**/.vscode/
+# Ignore build files and executables
+*.out
+*.exe
+*.o
+*.obj
+
+# Ignore common backup files
+*~
+*.swp

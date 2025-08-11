@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define pi (3.141592653589)
-#define mod 1000000007
+// #define mod 1000000007
 #define pb push_back
 #define is insert
 #define mp make_pair
@@ -24,7 +24,19 @@ typedef vector<ll> vll;
 #define nl cout << "\n"
 const unsigned int M = 1000000007;
 const int  N = 2e5 + 5 ;
+#define mod 998244353
 
+ll modexp(ll a, ll b){
+    ll ans=1;
+    while(b>0){
+        if(b%2==1){
+            ans=(ans*a)%mod;
+        }
+        b/=2;
+        a= (a*a)%mod;
+    }
+    return ans;
+}
 
 int main(){
 fast;
@@ -37,7 +49,14 @@ while(t--)
     cin>>n>>m;
     fr(n){
         ll l,r,p,q;
-        cin >>l>>r>>p>>q;
+
+        vector<pair<pair<ll, ll>, pair<ll, ll>>> a;
+    
+        for(i=0; i<n; i++){
+            cin>>l>>r>>p>>q;
+            a.push_back({{r, l}, {p, q}});
+        }
+        sort(a.begin(), a.end());
     }
 }
 return 0;

@@ -36,53 +36,21 @@ while(t--)
     cin>>n>>k;
     vll a(n), b(n);
     fr(n){
-        ll num; cin>>num;
-        a[i] = (num % k);
+        cin>>a[i];
+        a[i]%=k;
+        a[i] = min(a[i], k-a[i]);
     }
     fr(n){
-        ll num; cin>>num;
-        b[i] = (num % k);
+        cin>>b[i];
+        b[i]%=k;
+        b[i] = min(b[i], k-b[i]);
     }
-
-    vll s(k,0);
-    vll t(k,0);
-    fr(n){
-        s[a[i]]++;
-        t[b[i]]++;
+    sort(all(a));
+    sort(all(b));
+    if(a == b){
+        cout<<"YES"<<endl;
     }
-    // since k is 1e9 so loop is making problem here
-    fr(k){
-        if(s[i] == t[i]) {
-            s[i] =  0;
-            t[i] =0;
-        }
-        else if(s[i] > t[i]) {
-            s[i] -= t[i];
-            t[i] = 0;
-        }
-        else {
-            t[i] -= s[i];
-            s[i] = 0;
-        }
-
-    }
-    bool ans = true;
-
-    fr(k){
-        if(s[i] !=0 and ans==true){
-            int find = k-i;
-            if(t[find] != s[i] ) ans= false;
-            else{
-                t[find] = 0;
-                s[i] = 0;
-            }
-        }
-    }
-    if(ans) cout<<"YES"<<endl;
-    
     else cout<<"NO"<<endl;
-    
-
 
 }
 return 0;

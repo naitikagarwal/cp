@@ -29,61 +29,16 @@ const int  N = 2e5 + 5 ;
 int main(){
 fast;
 ll t=1;
-cin>>t;
+// cin>>t;
 while(t--)
+
 {
-    ll n,k;
-    cin>>n>>k;
-    vll a(n), b(n);
+    ll n,m;
+    cin>>n>>m;
     fr(n){
-        ll num; cin>>num;
-        a[i] = (num % k);
+        ll l,r,p,q;
+        cin >>l>>r>>p>>q;
     }
-    fr(n){
-        ll num; cin>>num;
-        b[i] = (num % k);
-    }
-
-    vll s(k,0);
-    vll t(k,0);
-    fr(n){
-        s[a[i]]++;
-        t[b[i]]++;
-    }
-    // since k is 1e9 so loop is making problem here
-    fr(k){
-        if(s[i] == t[i]) {
-            s[i] =  0;
-            t[i] =0;
-        }
-        else if(s[i] > t[i]) {
-            s[i] -= t[i];
-            t[i] = 0;
-        }
-        else {
-            t[i] -= s[i];
-            s[i] = 0;
-        }
-
-    }
-    bool ans = true;
-
-    fr(k){
-        if(s[i] !=0 and ans==true){
-            int find = k-i;
-            if(t[find] != s[i] ) ans= false;
-            else{
-                t[find] = 0;
-                s[i] = 0;
-            }
-        }
-    }
-    if(ans) cout<<"YES"<<endl;
-    
-    else cout<<"NO"<<endl;
-    
-
-
 }
 return 0;
 }
